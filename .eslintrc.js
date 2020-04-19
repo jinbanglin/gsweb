@@ -1,9 +1,23 @@
-const { strictEslint } = require('@umijs/fabric');
-
 module.exports = {
-  ...strictEslint,
-  globals: {
-    ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION: true,
-    page: true,
+  root: true,
+  env: {
+    browser: true,
+    node: true
   },
-};
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
+  extends: [
+    '@nuxtjs',
+    'prettier',
+    'prettier/vue',
+    'plugin:prettier/recommended',
+    'plugin:nuxt/recommended'
+  ],
+  plugins: [
+    'prettier'
+  ],
+  // add your custom rules here
+  rules: {
+  }
+}
