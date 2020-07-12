@@ -1,49 +1,54 @@
 <template>
   <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        gsweb
-      </h1>
-      <h2 class="subtitle">
-        My dazzling Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <recommend-list :list="recommendList" />
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import RecommendList from '~/components/index/RecommendList'
 
 export default {
   components: {
-    Logo
+    RecommendList
+  },
+  data() {
+    return {
+      recommendList: [
+        {
+          thumb:
+            'http://img5.imgtn.bdimg.com/it/u=2484758016,2231158131&fm=26&gp=0.jpg',
+          title: 'C++',
+          desc: '专业职场 课程体系'
+        },
+        {
+          thumb:
+            'http://pic1.win4000.com/wallpaper/2017-10-12/59decb9c94d5f.jpg',
+          title: 'C++',
+          desc: '专业职场 课程体系'
+        },
+        {
+          thumb: 'http://pic1.win4000.com/wallpaper/e/57ca4492a321e.jpg',
+          title: 'Python',
+          desc: '专业职场 课程体系'
+        },
+        {
+          thumb:
+            'http://www.33lc.com/article/UploadPic/2012-8/2012838584578094.jpg',
+          title: 'Python',
+          desc: '专业职场 课程体系'
+        }
+      ]
+    }
+  },
+  head() {
+    return {
+      title: '首页'
+    }
   }
 }
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
